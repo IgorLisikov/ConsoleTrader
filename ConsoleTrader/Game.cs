@@ -119,7 +119,7 @@ namespace ConsoleTrader
                     Coin = gameState.Coin;
                     Graph = gameState.Graph;
                     User = gameState.User;
-                    trendTimer = gameState.trendTimer;
+                    trendTimer.Interval = gameState.trendTimer.Interval;
                     result = true;
                 }
             }
@@ -238,7 +238,6 @@ namespace ConsoleTrader
             {
                 BalanceMoney = 100
             };
-
         }
         private string[] GetSavedGameFileNames(string searchPattern)
         {
