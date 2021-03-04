@@ -16,7 +16,7 @@ namespace Trader
         public FlatTrend()
         {
             Name = TrendName.Flat.ToString();
-            Influence = 1.002;
+            Influence = 1.03;
             ServerLoad = ServerLoadState.Normal.ToString();
             ListOfPriceChangeProbabilities = new List<ValueProbability>
             {
@@ -36,7 +36,7 @@ namespace Trader
         public DescendingFlatTrend()
         {
             Name = TrendName.DescendingFlat.ToString();
-            Influence = 0.97;
+            Influence = 0.98;
             ServerLoad = ServerLoadState.Normal.ToString();
             ListOfPriceChangeProbabilities = new List<ValueProbability>
             {
@@ -56,7 +56,7 @@ namespace Trader
         public AscendingFlatTrend()
         {
             Name = TrendName.AscendingFlat.ToString();
-            Influence = 1.03;
+            Influence = 1.08;
             ServerLoad = ServerLoadState.Normal.ToString();
             ListOfPriceChangeProbabilities = new List<ValueProbability>
             {
@@ -77,7 +77,7 @@ namespace Trader
         public BullMarketTrend()
         {
             Name = TrendName.BullMarket.ToString();
-            Influence = 1.1;
+            Influence = 1.13;
             ServerLoad = ServerLoadState.High.ToString();
             ListOfPriceChangeProbabilities = new List<ValueProbability>
             {
@@ -103,7 +103,7 @@ namespace Trader
         public BearMarketTrend()
         {
             Name = TrendName.BearMarket.ToString();
-            Influence = 0.9;
+            Influence = 0.95;
             ServerLoad = ServerLoadState.High.ToString();
             ListOfPriceChangeProbabilities = new List<ValueProbability>
             {
