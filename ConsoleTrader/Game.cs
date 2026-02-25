@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -381,7 +382,8 @@ namespace ConsoleTrader
             string emptyString = new string(' ', Console.WindowWidth - 1);
             string responseString;
             AppendSpaces(ref commandRequest);
-            if (double.TryParse(inputLine.Replace(".",","), out double amount) && amount > 0)
+            string normalized = inputLine.Replace(',', '.');
+            if (double.TryParse(normalized, NumberStyles.Any, CultureInfo.InvariantCulture, out double amount) && amount > 0)
             {
                 transaction.Amount = amount;
                 List<string> response = User.RequestTransaction(transaction);
