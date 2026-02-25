@@ -105,7 +105,7 @@ namespace Trader
             }
             double amountWithdraw = Math.Round(Amount, 2);
             User.BalanceMoney -= amountWithdraw;
-            Response.Add($"Message: You withdrawal of {amountWithdraw:0.00} Money has been processed.");
+            Response.Add($"Message: Your withdrawal of {amountWithdraw:0.00} Money has been processed.");
         }
     }
 
