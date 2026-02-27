@@ -95,6 +95,7 @@ namespace ConsoleTrader
         {
             priceTimer.Stop();
             trendTimer.Stop();
+            Console.Clear();
         }
         public void Save()
         {
@@ -166,9 +167,9 @@ namespace ConsoleTrader
                 }
 
                 Load(name, out bool result);
+                Console.Clear();
                 if (!result)
                 {
-                    Console.Clear();
                     Console.WriteLine("Error: Unable to load this file.");
                     ShowStartDialog();
                     return;
@@ -214,6 +215,7 @@ namespace ConsoleTrader
             Console.WriteLine("\"deposit\" - to make a deposit;");
             Console.WriteLine("\"withdraw\" - to make a withdrawal;");
             Console.WriteLine("\"exit\" - to save and exit game.");
+            Console.WriteLine("\"refresh\" - to refresh UI.");
             Console.WriteLine();
             Console.WriteLine("Press any key to continue:");
             Console.ReadKey();
@@ -254,6 +256,8 @@ namespace ConsoleTrader
             {
                 gameFrame.Clear();
                 gameFrame.Add($"Money: {User.BalanceMoney:0.00}\t\tCoin: {User.BalanceCoin:0.000000}      ");
+                gameFrame.Add("                                                                          ");
+                gameFrame.Add("\"help\" to see list of commands");
                 gameFrame.Add(new string(' ', Console.WindowWidth - 1));
                 gameFrame.AddRange(Graph.GraphImage);
                 gameFrame.Add(commandRequest);
@@ -316,7 +320,7 @@ namespace ConsoleTrader
                     case Command.Help:
                         commandRequest = "Enter command:";
                         AppendSpaces(ref commandRequest);
-                        responseString = "\"help\", \"buy\", \"sell\", \"deposit\", \"withdraw\", \"exit\".";
+                        responseString = "\"help\", \"buy\", \"sell\", \"deposit\", \"withdraw\", \"exit\", \"refresh\".";
                         AppendSpaces(ref responseString);
                         commandResponse.Add(responseString);
                         commandResponse.Add(emptyString);
@@ -350,6 +354,11 @@ namespace ConsoleTrader
                         Stop();
                         Save();
                         Environment.Exit(0);
+                        break;
+                    case Command.Refresh:
+                        Console.Clear();
+                        commandRequest = "Enter command:";
+                        AppendSpaces(ref commandRequest);
                         break;
                     default:
                         commandRequest = "Enter command:";

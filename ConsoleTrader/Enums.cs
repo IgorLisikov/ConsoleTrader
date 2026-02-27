@@ -9,7 +9,8 @@ namespace ConsoleTrader
         Sell,
         Deposit,
         Withdraw,
-        Exit
+        Exit,
+        Refresh
     }
     public enum CommandNavigator
     {
